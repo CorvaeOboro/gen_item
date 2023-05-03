@@ -5,15 +5,15 @@ create item images , a circular workflow of refinement using procgen augmented b
 - mutated by text-to-image guided neural networks ( VQGAN+CLIP , STABLEDIFFUSION )
 - cultivated dataset trained generative adversarial network to explore and select from the latent space ( STYLEGAN2ADA )
 
-| <a href="https://github.com/corvaeoboro/gen_item/tree/master/docs/gen_item_ring"> <img src="/docs/ring/item_ring_thumb_03.jpg?raw=true" width="200" height="200" /> </a>| <a href="https://github.com/corvaeoboro/gen_item/tree/master/docs/gen_item_potion"> <img src="/docs/potion/item_potion_thumb_03.jpg?raw=true" width="200" height="200" />  </a>  |  <a href="https://github.com/corvaeoboro/gen_item/tree/master/docs/gen_item_helm"> <img src="/docs/helm/item_helm_thumb_03.jpg?raw=true" width="200" height="200" />  </a>  | 
+| <a href="https://github.com/corvaeoboro/gen_item/tree/master/docs/gen_item_ring"> <img src="/docs/ring/item_ring_thumb.jpg?raw=true" width="200" height="200" /> </a>| <a href="https://github.com/corvaeoboro/gen_item/tree/master/docs/gen_item_potion"> <img src="/docs/potion/item_potion_thumb.jpg?raw=true" width="200" height="200" />  </a>  |  <a href="https://github.com/corvaeoboro/gen_item/tree/master/docs/gen_item_helm"> <img src="/docs/helm/item_helm_thumb.jpg?raw=true" width="200" height="200" />  </a>  | 
 | :---: | :---: | :---: | 
 |  [ring](https://corvaeoboro.github.io/gen_item/gen_item_ring_all.htm) |  [potion](https://corvaeoboro.github.io/gen_item/gen_item_potion_all.htm)  |  [helm](https://corvaeoboro.github.io/gen_item/gen_item_helm_all.htm)  | 
 
-![item_ring_process2_single](https://raw.githubusercontent.com/CorvaeOboro/gen_item/master/docs/ring/item_ring_process2_single.jpg?raw=true "item_ring_process2_single")
+![item_ring_process_single](https://raw.githubusercontent.com/CorvaeOboro/gen_item/master/docs/ring/item_ring_process_single.jpg?raw=true "item_ring_process_single")
 
-![item_potion_process2_single](https://raw.githubusercontent.com/CorvaeOboro/gen_item/master/docs/potion/item_potion_process2_single.jpg?raw=true "item_potion_process2_single")
+![item_potion_process_single](https://raw.githubusercontent.com/CorvaeOboro/gen_item/master/docs/potion/item_potion_process_single.jpg?raw=true "item_potion_process_single")
 
-![item_helm_process2_single](https://raw.githubusercontent.com/CorvaeOboro/gen_item/master/docs/helm/item_helm_process2_single.jpg?raw=true "item_helm_process2_single")
+![item_helm_process_single](https://raw.githubusercontent.com/CorvaeOboro/gen_item/master/docs/helm/item_helm_process_single.jpg?raw=true "item_helm_process_single")
 
 
 # IMAGE DATASET
@@ -29,9 +29,9 @@ create item images , a circular workflow of refinement using procgen augmented b
 
 | item | fid | dataset | date | colors | 
 | :---: | :--- | :--- | :--- | :--- | 
-| ring | 14.9 | 3953 | 20230427 | ![ring_color_graph](https://raw.githubusercontent.com/CorvaeOboro/gen_item/master/docs/ring/ring_color_graph.jpg?raw=true "ring_color_graph") | 
-| potion | 9.24 | 4413 | 20230218 | ![potion_color_graph](https://raw.githubusercontent.com/CorvaeOboro/gen_item/master/docs/potion/potion_color_graph.jpg?raw=true "potion_color_graph") | 
-| helm | 14.7 | 2818 | 20221013 | ![helm_color_graph](https://raw.githubusercontent.com/CorvaeOboro/gen_item/master/docs/helm/helm_color_graph.jpg?raw=true "helm_color_graph") | 
+| ring | 14.9 | 3953 | 20230427 | ![ring_color_graph](https://raw.githubusercontent.com/CorvaeOboro/gen_item/master/docs/ring/item_ring_color_graph.jpg?raw=true "ring_color_graph") | 
+| potion | 9.24 | 4413 | 20230218 | ![potion_color_graph](https://raw.githubusercontent.com/CorvaeOboro/gen_item/master/docs/potion/item_potion_color_graph.jpg?raw=true "potion_color_graph") | 
+| helm | 14.7 | 2818 | 20221013 | ![helm_color_graph](https://raw.githubusercontent.com/CorvaeOboro/gen_item/master/docs/helm/item_helm_color_graph.jpg?raw=true "helm_color_graph") | 
 
 ![item_ring_stylegan2ada_20220618_comp_2](https://raw.githubusercontent.com/CorvaeOboro/gen_item/master/docs/ring/item_ring_stylegan2ada_20220618_comp_2.jpg?raw=true "item_ring_stylegan2ada_20220618_comp_2")
 
