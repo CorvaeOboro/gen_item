@@ -1,0 +1,154 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>GEN_ABILITY_ICON</title>
+<style type="text/css">
+<!--
+body {
+	background-color: #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #666666;
+}
+-->
+</style></head>
+
+<body>
+
+
+<h1>GEN_ITEM</h1>
+<p>creates item images , a circular workflow of refinement using procgen augmented by neural networks .
+<br>- DOWNLOAD ITEMS | VIEW IMAGE LIST | INSTALL
+<br>- procedurally generated 3d renders using SideFX's Houdini tools and Procedural Dependency Graph Task Operators  ( PDG TOPs )
+<br>- mutated by text-to-image guided neural networks ( VQGAN+CLIP )
+<br>- cultivated dataset then trained generative adversarial network to explore and select from the latent space ( STYLEGAN2ADA )</p>
+
+<table><tr>
+<td><center><a href="gen_item_ring.htm" target="gen_item_main">
+<img alt="item_ring_thumb_03" src="ring/item_ring_thumb_03.jpg?raw=true" title="item_ring_thumb_03" width="200" />
+<br>ring</a>
+</td>
+
+<td><center><a href="gen_item_potion.htm" target="gen_item_main">
+<img alt="item_potion_thumb_03" src="potion/item_potion_thumb_03.jpg?raw=true" title="item_potion_thumb_03" width="200" />
+<br>potion</a>
+</td>
+
+<td><center><a href="gen_item_helm.htm" target="gen_item_main">
+<img alt="item_helm_thumb_03" src="helm/item_helm_thumb_03.jpg?raw=true" title="item_helm_thumb_03" width="200" />
+<br>helm</a>
+</td>
+
+</tr>
+</table>
+
+
+<p><img alt="item_ring_process2_single" src="ring/item_ring_process2_single.jpg?raw=true" title="item_ring_process2_single" width="700" /></p>
+<p><img alt="item_helm_process2_single" src="helm/item_helm_process2_single.jpg?raw=true" title="item_helm_process2_single" width="700" /></p>
+<p><img alt="item_potion_process2_single" src="potion/item_potion_process2_single.jpg?raw=true" title="item_potion_process2_single" width="700" /></p>
+
+
+<h1>IMAGE DATASET</h1>
+<ul>
+<li>a synthetic image dataset of circular magic ability icons</li>
+<li>collection of favored ability icons generated free to all </li>
+<li>DOWNLOAD ICONS | VIEW IMAGE LIST</li>
+</ul>
+<p><img alt="item_ring_stylegan2ada_20221009_comp" src="ring/item_ring_stylegan2ada_20221009_comp.jpg?raw=true" title="item_ring_stylegan2ada_20221009_comp" width="700" /></p>
+
+
+<h1>STYLEGANADA CHECKPOINT</h1>
+<ul>
+<li>a stylegan2 network checkpoint trained on synthetic 256x256 images of generated selections .</li>
+<li>there is much to explore in 512-dimensional latent space , may you find favored .</li>
+<li>create new seeds using this notebook : colab link</li>
+</ul>
+<p><img alt="item_ring_stylegan2ada_20220618_comp_2" src="ring/item_ring_stylegan2ada_20220618_comp_2.jpg?raw=true" title="item_ring_stylegan2ada_20220618_comp_2" width="700"/></p>
+
+
+<h1>PROCGEN</h1>
+<ul>
+<li>houdini hda tool , GEN_ABILITY_ICON.hda , generates 3d randomized icons from archetypes ( slash , shatter , splatter )</li>
+<li>included GEN_ABILITY_ICON.hip file setup with TOPs , renders randomized wedging  </li>
+<li>utilizes SideFXLabs hda tools and ZENV hda tools </li>
+<li>focused on volumetric lighting , metallic material , randomize vertex color</li>
+</ul>
+<p><img alt="item_ring_procgen" src="ring/item_ring_procgen.jpg?raw=true" title="item_ring_procgen" width="700"/></p>
+<p><img alt="item_ring_pdgA_comp" src="ring/item_ring_pdgA_comp.jpg?raw=true" title="item_ring_pdgA_comp" width="700" /></p>
+<h1>GUIDED MUTATION / REMIXING</h1>
+<ul>
+<li>with initial set of procgen selected , expand the dataset and alter using various techniques :</li>
+<li>VQGAN+CLIP - text-to-image guided modification of input image , similar to text based styletransfer </li>
+<li>IMAGE_COLLAGE.py - given a folder of images randomly composites them with randomized hue / brightness / normalization </li>
+</ul>
+<p><img alt="item_ring_stablediffusion_20220915_comp" src="ring/item_ring_stablediffusion_20220915_comp.jpg?raw=true" title="item_ring_stablediffusion_20220915_comp" width="700" /></p>
+
+<h1>INSTALL</h1>
+<p>```.bash</p>
+<h1>anaconda create from included environment.yml</h1>
+<p>git clone 'https://github.com/CorvaeOboro/gen_ability_icon'
+cd gen_ability_icon
+conda env create --prefix venv -f environment.yml
+conda activate venv</p>
+<h1>clone STYLEGAN2ADA</h1>
+<p>git clone 'https://github.com/NVlabs/stylegan2'</p>
+<h1>clone VQGANCLIP</h1>
+<p>git clone 'https://github.com/openai/CLIP'
+git clone 'https://github.com/CompVis/taming-transformers'</p>
+<h1>download VQGAN checkpoint imagenet 16k</h1>
+<p>mkdir checkpoints
+curl -L -o checkpoints/vqgan_imagenet_f16_16384.yaml -C - 'https://heibox.uni-heidelberg.de/d/a7530b09fed84f80a887/files/?p=%2Fconfigs%2Fmodel.yaml&amp;dl=1' #ImageNet 16384
+curl -L -o checkpoints/vqgan_imagenet_f16_16384.ckpt -C - 'https://heibox.uni-heidelberg.de/d/a7530b09fed84f80a887/files/?p=%2Fckpts%2Flast.ckpt&amp;dl=1' #ImageNet 16384</p>
+<p>```</p>
+<h1>WORKFLOW</h1>
+<ul>
+<li>generate procgen renders from houdini , selecting favored renders</li>
+<li>mutate those renders via text guided VQGAN+CLIP </li>
+<li>combine the renders and mutants via random collaging </li>
+<li>select the favored icons and create a stylegan2 dataset </li>
+<li>train stylegan2 network , then generate seeds from trained checkpoint</li>
+<li>cultivate the complete dataset thru selection and artistic adjustments </li>
+<li>repeat to expand and refine by additional text guided mutation  , retraining , regenerating</li>
+</ul>
+<p><img alt="item_ring_process" src="ring/item_ring_process.jpg?raw=true" title="item_ring_process" width="700" /></p>
+
+<h1>THANKS</h1>
+<p>many thanks to 
+- NVIDIA NVLabs - https://github.com/NVlabs/stylegan2-ada
+- CLIP - https://github.com/openai/CLIP
+- VQGAN - https://github.com/CompVis/taming-transformers
+- Katherine Crowson : <a href="https://github.com/crowsonkb">https://github.com/crowsonkb</a>  https://arxiv.org/abs/2204.08583
+- NerdyRodent : https://github.com/nerdyrodent/VQGAN-CLIP</p>
+<h1>AKNOWLEDGEMENTS</h1>
+<p><code>@inproceedings{Karras2020ada,
+  title     = {Training Generative Adversarial Networks with Limited Data},
+  author    = {Tero Karras and Miika Aittala and Janne Hellsten and Samuli Laine and Jaakko Lehtinen and Timo Aila},
+  booktitle = {Proc. NeurIPS},
+  year      = {2020}
+}</code>
+<code>@misc{esser2020taming,
+      title={Taming Transformers for High-Resolution Image Synthesis}, 
+      author={Patrick Esser and Robin Rombach and Björn Ommer},
+      year={2020},
+      eprint={2012.09841},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}</code>
+<code>@misc{https://doi.org/10.48550/arxiv.2103.00020,
+  doi = {10.48550/ARXIV.2103.00020},
+  url = {https://arxiv.org/abs/2103.00020},
+  author = {Radford, Alec and Kim, Jong Wook and Hallacy, Chris and Ramesh, Aditya and Goh, Gabriel and Agarwal, Sandhini and Sastry, Girish and Askell, Amanda and Mishkin, Pamela and Clark, Jack and Krueger, Gretchen and Sutskever, Ilya},
+  keywords = {Computer Vision and Pattern Recognition (cs.CV), Machine Learning (cs.LG), FOS: Computer and information sciences, FOS: Computer and information sciences},
+  title = {Learning Transferable Visual Models From Natural Language Supervision},
+  publisher = {arXiv},
+  year = {2021},
+  copyright = {arXiv.org perpetual, non-exclusive license}
+}</code></p>
+<h2>CREATIVE COMMONS ZERO</h2>
+<p>free to all , <a href="https://creativecommons.org/publicdomain/zero/1.0/">creative commons CC0</a> , free to redistribute , no attribution required</p>
+
+
+
+
+</body>
+</html>

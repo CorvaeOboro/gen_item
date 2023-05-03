@@ -10,9 +10,7 @@ create item images , a circular workflow of refinement using procgen augmented b
 |  [ring](https://corvaeoboro.github.io/gen_item/gen_item_ring_all.htm) |  [potion](https://corvaeoboro.github.io/gen_item/gen_item_potion_all.htm)  |  [helm](https://corvaeoboro.github.io/gen_item/gen_item_helm_all.htm)  | 
 
 ![item_ring_process_single](https://raw.githubusercontent.com/CorvaeOboro/gen_item/master/docs/ring/item_ring_process_single.jpg?raw=true "item_ring_process_single")
-
 ![item_potion_process_single](https://raw.githubusercontent.com/CorvaeOboro/gen_item/master/docs/potion/item_potion_process_single.jpg?raw=true "item_potion_process_single")
-
 ![item_helm_process_single](https://raw.githubusercontent.com/CorvaeOboro/gen_item/master/docs/helm/item_helm_process_single.jpg?raw=true "item_helm_process_single")
 
 
@@ -20,11 +18,10 @@ create item images , a circular workflow of refinement using procgen augmented b
 - a synthetic image dataset of fantasy items
 - collection of favored items generated free to all 
 - DOWNLOAD ITEMS | VIEW IMAGE LIST
-
 ![item_ring_stylegan2ada_20221009_comp](https://raw.githubusercontent.com/CorvaeOboro/gen_item/master/docs/ring/item_ring_stylegan2ada_20221009_comp.jpg?raw=true "item_ring_stylegan2ada_20221009_comp")
 
 # STYLEGANADA CHECKPOINT
-- a stylegan2 network checkpoint trained on synthetic 1024x1024 images of generated selections .
+- stylegan2 network checkpoints trained on synthetic 1024x1024 images of generated selections .
 - create new seeds using these notebooks or spaces : colab link , huggingface space
 
 | item | fid | dataset | date | colors | 
@@ -36,13 +33,10 @@ create item images , a circular workflow of refinement using procgen augmented b
 ![item_ring_stylegan2ada_20220618_comp_2](https://raw.githubusercontent.com/CorvaeOboro/gen_item/master/docs/ring/item_ring_stylegan2ada_20220618_comp_2.jpg?raw=true "item_ring_stylegan2ada_20220618_comp_2")
 
 # PROCGEN
-- houdini hda tool , gen_item.hda , generates 3d randomized icons from archetypes ( slash , shatter , splatter )
-- included gen_item.docs file setup with TOPs , renders randomized wedging  
-- utilizes SideFXLabs hda tools and gen_item hda tools 
-- focused on volumetric lighting , metallic material , randomize vertex color
-
+- houdini hda tools generate 3d randomized items as a base
+- included hip files setup with PDG TOPs , rendering randomized wedging  to generate the dataset
+- utilizes [SideFXLabs](https://github.com/sideeffects/SideFXLabs) hda tools and [ZENV](https://github.com/CorvaeOboro/zenv) hda tools 
 ![item_ring_procgen](https://raw.githubusercontent.com/CorvaeOboro/gen_item/master/docs/ring/item_ring_procgen.jpg?raw=true "item_ring_procgen")
-
 ![item_ring_pdgA_comp](https://raw.githubusercontent.com/CorvaeOboro/gen_item/master/docs/ring/item_ring_pdgA_comp.jpg?raw=true "item_ring_pdgA_comp")
 
 # GUIDED MUTATION / REMIXING
@@ -50,7 +44,6 @@ create item images , a circular workflow of refinement using procgen augmented b
 - VQGAN+CLIP and STABLEDIFFUSION - text-to-image guided modification of input image 
 - PROMPT generation from wildcards text files 
 - IMAGE_COLLAGE.py - given a folder of images randomly composites them with randomized hue / brightness / normalization 
-
 ![item_ring_stablediffusion_20220915_comp](https://raw.githubusercontent.com/CorvaeOboro/gen_item/master/docs/ring/item_ring_stablediffusion_20220915_comp.jpg?raw=true "item_ring_stablediffusion_20220915_comp")
 
 # INSTALL
@@ -83,18 +76,21 @@ curl -L -o checkpoints/vqgan_imagenet_f16_16384.ckpt -C - 'https://heibox.uni-he
 python gen_item_houdini_render.py
 ```
 - generate prompts for text2image mutation 
-
+```.bash
+# vqgan+clip text2image batch alter from init image set
+python prompts/text_word_combine_complex.py  
+```
 - mutate those renders via text guided VQGAN+CLIP 
 ```.bash
 # vqgan+clip text2image batch alter from init image set
 python gen_item_vqganclip.py  
-python gen_item_vqganclip.py --input_path="./icons/" --input_prompt_list="prompts_list.txt" 
+python gen_item_vqganclip.py --input_path="./item/ring" --input_prompt_list="./prompts/prompts_ring.txt" 
 ```
 - combine the renders and mutants via random collaging 
 ```.bash
 # collage from generated icon set
 python gen_item_collage.py
-python gen_item_collage.py --input_path="./icons/" --resolution=256
+python gen_item_collage.py --input_path="./item/ring" --resolution=1024
 ```
 - select the favored icons to create a stylegan2 dataset 
 - train stylegan2 network , then generate seeds from trained checkpoint
