@@ -1,0 +1,28 @@
+jade
+stone
+metal
+gem
+obsidian
+mithril
+silver
+stone
+plants
+vines
+roots
+bark
+wood
+steel 
+platinum
+abalone
+iron
+wrought iron
+petrified wood
+stone
+rock
+coral
+tree roots
+copper
+bronze
+oxidized rusted copper
+slime
+bone

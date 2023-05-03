@@ -1,0 +1,12 @@
+chestplate 
+armor
+platemail
+body armor
+cuirass
+breastplate
+gothic plate armor
+gothic cuirass
+Brigandine
+Culet
+Plackart
+Faulds

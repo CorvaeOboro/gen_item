@@ -1,0 +1,30 @@
+sphere
+orb
+orrey
+skull
+rock
+mineral
+eyeball
+abstract sculpture
+metal sculpture
+rune
+rune inscribed rock
+diamond
+shard
+gemstone
+prism
+gem
+glyph
+hexahedron
+amber
+glass sculpture
+heart
+floating crystal
+core
+puzzle
+brain
+conch shell
+artifact
+runestone
+seed
+crystal

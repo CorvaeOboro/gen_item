@@ -1,0 +1,17 @@
+sword
+greatsword
+glaive
+blade
+cutlass
+scimatar
+broadsword
+claymore
+falchion
+katana
+machete
+longsword
+dao sword
+zweilhander
+shortsword
+knife
+dagger

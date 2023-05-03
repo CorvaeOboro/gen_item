@@ -1,0 +1,28 @@
+potion
+bottle
+vase
+potion bottle
+bottle terrarium
+sphere potion bottle
+glass jar
+glass bottle
+vial 
+phial
+flagon
+urn
+glass beaker
+glass flask
+ewer
+decanter
+demijohn
+vintage bottle
+florence flask
+roundbottom flask
+glassware
+genie bottle
+alchemist bottle
+glass bottle
+testube
+a potion of healing
+a potion of mana
+jade carved vase

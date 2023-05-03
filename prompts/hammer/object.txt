@@ -1,0 +1,8 @@
+hammer
+greathammer
+sledgehammer
+mallet
+gavel
+maul
+mace
+bludgeon
