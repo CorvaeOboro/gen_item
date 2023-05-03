@@ -1,9 +1,9 @@
 # GEN_ITEM
 create item images , a circular workflow of refinement using procgen augmented by neural networks .
-- [DOWNLOAD ICONS](https://github.com/CorvaeOboro/gen_item/archive/refs/heads/master.zip) |  [VIEW ITEMS](https://corvaeoboro.github.io/gen_item/gen_ability_icon_all.htm) |  [INSTALL](#install) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1ZjLNer1pg6HluzxknAtPu0fQ2wDCvsxQ?authuser=0) | [![Hugging Face Spaces]
-- procedurally generated 3d renders using SideFX's Houdini tools and Procedural Dependency Graph Task Operators  ( PDG TOPs )
+- [DOWNLOAD ICONS](https://github.com/CorvaeOboro/gen_item/archive/refs/heads/master.zip) |  [VIEW ITEMS](https://corvaeoboro.github.io/gen_item/gen_ability_icon_all.htm) |  [INSTALL](#install) 
+- procedurally generated 3d renders using SideFX's Houdini tools and PDG TOPs 
 - mutated by text-to-image guided neural networks ( VQGAN+CLIP , STABLEDIFFUSION )
-- cultivated dataset trained generative adversarial network to explore and select from the latent space ( STYLEGAN2ADA )
+- cultivated dataset trained generative adversarial network to generate new variants ( STYLEGAN2ADA )
 
 | <a href="https://github.com/corvaeoboro/gen_item/tree/master/docs/gen_item_ring"> <img src="/docs/ring/item_ring_thumb.jpg?raw=true" width="200" height="200" /> </a>| <a href="https://github.com/corvaeoboro/gen_item/tree/master/docs/gen_item_potion"> <img src="/docs/potion/item_potion_thumb.jpg?raw=true" width="200" height="200" />  </a>  |  <a href="https://github.com/corvaeoboro/gen_item/tree/master/docs/gen_item_helm"> <img src="/docs/helm/item_helm_thumb.jpg?raw=true" width="200" height="200" />  </a>  | 
 | :---: | :---: | :---: | 
@@ -18,11 +18,12 @@ create item images , a circular workflow of refinement using procgen augmented b
 - a synthetic image dataset of fantasy items
 - collection of favored items generated free to all 
 - DOWNLOAD ITEMS | VIEW IMAGE LIST
-![item_ring_stylegan2ada_20221009_comp](https://raw.githubusercontent.com/CorvaeOboro/gen_item/master/docs/ring/item_ring_stylegan2ada_20221009_comp.jpg?raw=true "item_ring_stylegan2ada_20221009_comp")
+![item_ring_stylegan2ada_20230218_comp](https://raw.githubusercontent.com/CorvaeOboro/gen_item/master/docs/ring/item_ring_stylegan2ada_20230218_comp.jpg?raw=true "item_ring_stylegan2ada_20230218_comp")
 
 # STYLEGANADA CHECKPOINT
 - stylegan2 network checkpoints trained on synthetic 1024x1024 images of generated selections .
-- create new seeds using these notebooks or spaces : colab link , huggingface space
+- create new seeds using these notebooks or spaces :
+- ring = [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/CorvaeOboro/gen_item_ring) , potion = [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/CorvaeOboro/gen_item_potion)
 
 | item | fid | dataset | date | colors | 
 | :---: | :--- | :--- | :--- | :--- | 
