@@ -1,8 +1,8 @@
 # GEN_ITEM
 create item images , a circular workflow of refinement using procgen augmented by neural networks .
-- [DOWNLOAD ICONS](https://github.com/CorvaeOboro/gen_item/archive/refs/heads/master.zip) |  [VIEW ITEMS](https://corvaeoboro.github.io/gen_item/gen_item_ring_all.htm) |  [INSTALL](#install) 
+- [DOWNLOAD](https://github.com/CorvaeOboro/gen_item/archive/refs/heads/master.zip) |  [VIEW ITEMS](https://corvaeoboro.github.io/gen_item/gen_item_ring_all.htm) |  [INSTALL](#install) 
 - procedurally generated 3d renders using [SideFX's Houdini](https://www.sidefx.com/) tools and [PDG TOPs](https://www.sidefx.com/products/pdg/) 
-- mutated by text-to-image guided neural networks ( [VQGAN+CLIP](https://github.com/CompVis/taming-transformers) , STABLEDIFFUSION )
+- mutated by text-to-image guided neural networks ( [VQGAN+CLIP](https://github.com/CompVis/taming-transformers) , [STABLEDIFFUSION]( https://github.com/Stability-AI/stablediffusion)
 - cultivated dataset trained generative adversarial network to generate new variants (  [STYLEGAN2ADA](https://github.com/NVlabs/stylegan2-ada)  )
 
 | <a href="https://corvaeoboro.github.io/gen_item/gen_item_ring_all.htm"> <img src="/docs/ring/item_ring_thumb.jpg?raw=true" width="200" height="200" /> </a>| <a href="https://corvaeoboro.github.io/gen_item/gen_item_potion_all.htm"> <img src="/docs/potion/item_potion_thumb.jpg?raw=true" width="200" height="200" />  </a>  |  <a href="https://corvaeoboro.github.io/gen_item/gen_item_helm_all.htm"> <img src="/docs/helm/item_helm_thumb.jpg?raw=true" width="200" height="200" />  </a>  | 
@@ -23,12 +23,11 @@ create item images , a circular workflow of refinement using procgen augmented b
 # STYLEGANADA CHECKPOINT
 - stylegan2 network checkpoints trained on synthetic 1024x1024 images of generated selections .
 - create new seeds using these notebooks or spaces :
-- ring = ![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/CorvaeOboro/gen_item_ring) , potion = ![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/CorvaeOboro/gen_item_potion)
 
 | item | generate | fid | dataset | date | color_distribution | 
 | :---: | :--- | :--- | :--- | :--- | :--- | 
 | ring |[![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/CorvaeOboro/gen_item_ring)  | 14.9 | 3953 | 20230427 | <img src="docs/ring/item_ring_color_graph.jpg?raw=true"  />| 
-| potion |![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/CorvaeOboro/gen_item_potion) | 9.24 | 4413 | 20230218 | <img src="docs/potion/item_potion_color_graph.jpg?raw=true" />|  
+| potion |[![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/CorvaeOboro/gen_item_potion) | 9.24 | 4413 | 20230218 | <img src="docs/potion/item_potion_color_graph.jpg?raw=true" />|  
 | helm | space | 14.7 | 2818 | 20221013 | <img src="docs/helm/item_helm_color_graph.jpg?raw=true" />| 
 
 ![item_ring_stylegan2ada_20220618_comp_2](https://raw.githubusercontent.com/CorvaeOboro/gen_item/master/docs/ring/item_ring_stylegan2ada_20220618_comp_2.jpg?raw=true "item_ring_stylegan2ada_20220618_comp_2")
@@ -57,18 +56,21 @@ conda env create --prefix venv -f environment.yml
 conda activate C:/FOLDER/gen_item/venv
 
 #clone STYLEGAN2ADA
-git clone 'https://github.com/NVlabs/stylegan2'
+git clone "https://github.com/NVlabs/stylegan2-ada-pytorch"
 
 #clone VQGANCLIP 
-git clone 'https://github.com/openai/CLIP'
-git clone 'https://github.com/CompVis/taming-transformers'
+git clone "https://github.com/openai/CLIP"
+git clone "https://github.com/CompVis/taming-transformers"
 
 #download VQGAN checkpoint imagenet 16k
 mkdir checkpoints
 curl -L -o checkpoints/vqgan_imagenet_f16_16384.yaml -C - 'https://heibox.uni-heidelberg.de/d/a7530b09fed84f80a887/files/?p=%2Fconfigs%2Fmodel.yaml&dl=1' #ImageNet 16384
 curl -L -o checkpoints/vqgan_imagenet_f16_16384.ckpt -C - 'https://heibox.uni-heidelberg.de/d/a7530b09fed84f80a887/files/?p=%2Fckpts%2Flast.ckpt&dl=1' #ImageNet 16384
 
+# generate new seeds from checkpoints
+python gen_item_stylegan2ada_generate.py
 ```
+stylegan2ada requires CUDA https://developer.nvidia.com/cuda-11.3.0-download-archive
 
 # WORKFLOW
 - generate procgen renders from houdini , selecting favored renders

@@ -6,6 +6,7 @@ import os.path
 from os import path
 from os.path import abspath
 import requests
+import sys
 
 # GEN_ITEM CHECKPOINT GITHUB URL and FILEPATH
 checkpoint_url_start = '''https://github.com/CorvaeOboro/gen_item/releases/download/'''
@@ -27,14 +28,14 @@ def get_gen_item_checkpoints(checkpoint_filepath_input,checkpoint_url_input):
                 except OSError as error: 
                         print(error)  
                 network_absolute = abspath(network)
-                print("GEN ABILITY PKL MISSING  == " + str(network_absolute))
+                print("GEN ITEM PKL MISSING  == " + str(network_absolute))
                 network_url = checkpoint_url_start + checkpoint_url_input
                 print("DOWNLOAD PKL  == " + str(network_url))
                 response = requests.get(network_url)
                 print("DOWNLOADING....")
                 with open(network_absolute, 'wb') as f:
                         f.write(response.content)
-                print("====DOWNLOAD ABILITY ICON pkl COMPLETED====")
+                print("====DOWNLOAD GEN_ITEM pkl COMPLETED====")
 
 def gen_item_generate(checkpoint_filepath):
         # RANDOM SEED
@@ -51,16 +52,14 @@ def gen_item_generate(checkpoint_filepath):
 
         # OUTPUT FOLDER
         outdir="./output"
-        try: 
+        if not os.path.exists(outdir):
                 os.mkdir(outdir) 
-        except OSError as error: 
-                print(outdir + "  EXISTS")  
 
         # GENERATE STYLEGAN2ADA SEEDS //=====================================================
         stylegan2ada_generate="./stylegan2-ada-pytorch/generate.py"
         if path.exists(stylegan2ada_generate) :
                 print("EXISTING STYLEGAN2ADA FOUND == " + str(stylegan2ada_generate))
-                p = subprocess.call(['python', 'stylegan2-ada-pytorch/generate.py', '--seeds', str(seeds_final), '--trunc', str(truncation), '--outdir', str(outdir), '--network', str(checkpoint_filepath)])
+                p = subprocess.call([sys.executable, 'stylegan2-ada-pytorch/generate.py', '--seeds', str(seeds_final), '--trunc', str(truncation), '--outdir', str(outdir), '--network', str(checkpoint_filepath)])
         else:
                 print("==== ERROR - STYLEGAN2ADAPYTORCH NOT FOUND , GIT CLONE ====")
 
