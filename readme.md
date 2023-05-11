@@ -1,11 +1,11 @@
 # GEN_ITEM
 create item images , a circular workflow of refinement using procgen augmented by neural networks .
-- [DOWNLOAD ICONS](https://github.com/CorvaeOboro/gen_item/archive/refs/heads/master.zip) |  [VIEW ITEMS](https://corvaeoboro.github.io/gen_item/gen_ability_icon_all.htm) |  [INSTALL](#install) 
-- procedurally generated 3d renders using SideFX's Houdini tools and PDG TOPs 
-- mutated by text-to-image guided neural networks ( VQGAN+CLIP , STABLEDIFFUSION )
-- cultivated dataset trained generative adversarial network to generate new variants ( STYLEGAN2ADA )
+- [DOWNLOAD ICONS](https://github.com/CorvaeOboro/gen_item/archive/refs/heads/master.zip) |  [VIEW ITEMS](https://corvaeoboro.github.io/gen_item/gen_item_ring_all.htm) |  [INSTALL](#install) 
+- procedurally generated 3d renders using [SideFX's Houdini](https://www.sidefx.com/) tools and [PDG TOPs](https://www.sidefx.com/products/pdg/) 
+- mutated by text-to-image guided neural networks ( [VQGAN+CLIP](https://github.com/CompVis/taming-transformers) , STABLEDIFFUSION )
+- cultivated dataset trained generative adversarial network to generate new variants (  [STYLEGAN2ADA](https://github.com/NVlabs/stylegan2-ada)  )
 
-| <a href="https://github.com/corvaeoboro/gen_item/tree/master/docs/gen_item_ring"> <img src="/docs/ring/item_ring_thumb.jpg?raw=true" width="200" height="200" /> </a>| <a href="https://github.com/corvaeoboro/gen_item/tree/master/docs/gen_item_potion"> <img src="/docs/potion/item_potion_thumb.jpg?raw=true" width="200" height="200" />  </a>  |  <a href="https://github.com/corvaeoboro/gen_item/tree/master/docs/gen_item_helm"> <img src="/docs/helm/item_helm_thumb.jpg?raw=true" width="200" height="200" />  </a>  | 
+| <a href="https://corvaeoboro.github.io/gen_item/gen_item_ring_all.htm"> <img src="/docs/ring/item_ring_thumb.jpg?raw=true" width="200" height="200" /> </a>| <a href="https://corvaeoboro.github.io/gen_item/gen_item_potion_all.htm"> <img src="/docs/potion/item_potion_thumb.jpg?raw=true" width="200" height="200" />  </a>  |  <a href="https://corvaeoboro.github.io/gen_item/gen_item_helm_all.htm"> <img src="/docs/helm/item_helm_thumb.jpg?raw=true" width="200" height="200" />  </a>  | 
 | :---: | :---: | :---: | 
 |  [ring](https://corvaeoboro.github.io/gen_item/gen_item_ring_all.htm) |  [potion](https://corvaeoboro.github.io/gen_item/gen_item_potion_all.htm)  |  [helm](https://corvaeoboro.github.io/gen_item/gen_item_helm_all.htm)  | 
 
@@ -17,19 +17,19 @@ create item images , a circular workflow of refinement using procgen augmented b
 # IMAGE DATASET
 - a synthetic image dataset of fantasy items
 - collection of favored items generated free to all 
-- DOWNLOAD ITEMS | VIEW IMAGE LIST
+- [DOWNLOAD IMAGES](https://github.com/CorvaeOboro/gen_item/archive/refs/heads/master.zip)  | [VIEW ITEMS](https://corvaeoboro.github.io/gen_item/gen_item_ring_all.htm) 
 ![item_ring_stylegan2ada_20230218_comp](https://raw.githubusercontent.com/CorvaeOboro/gen_item/master/docs/ring/item_ring_stylegan2ada_20230218_comp.jpg?raw=true "item_ring_stylegan2ada_20230218_comp")
 
 # STYLEGANADA CHECKPOINT
 - stylegan2 network checkpoints trained on synthetic 1024x1024 images of generated selections .
 - create new seeds using these notebooks or spaces :
-- ring = [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/CorvaeOboro/gen_item_ring) , potion = [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/CorvaeOboro/gen_item_potion)
+- ring = ![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/CorvaeOboro/gen_item_ring) , potion = ![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/CorvaeOboro/gen_item_potion)
 
-| item | fid | dataset | date | colors | 
-| :---: | :--- | :--- | :--- | :--- | 
-| ring | 14.9 | 3953 | 20230427 | ![ring_color_graph](https://raw.githubusercontent.com/CorvaeOboro/gen_item/master/docs/ring/item_ring_color_graph.jpg?raw=true "ring_color_graph") | 
-| potion | 9.24 | 4413 | 20230218 | ![potion_color_graph](https://raw.githubusercontent.com/CorvaeOboro/gen_item/master/docs/potion/item_potion_color_graph.jpg?raw=true "potion_color_graph") | 
-| helm | 14.7 | 2818 | 20221013 | ![helm_color_graph](https://raw.githubusercontent.com/CorvaeOboro/gen_item/master/docs/helm/item_helm_color_graph.jpg?raw=true "helm_color_graph") | 
+| item | generate | fid | dataset | date | color_distribution | 
+| :---: | :--- | :--- | :--- | :--- | :--- | 
+| ring |[![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/CorvaeOboro/gen_item_ring)  | 14.9 | 3953 | 20230427 | <img src="docs/ring/item_ring_color_graph.jpg?raw=true"  />| 
+| potion |![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/CorvaeOboro/gen_item_potion) | 9.24 | 4413 | 20230218 | <img src="docs/potion/item_potion_color_graph.jpg?raw=true" />|  
+| helm | space | 14.7 | 2818 | 20221013 | <img src="docs/helm/item_helm_color_graph.jpg?raw=true" />| 
 
 ![item_ring_stylegan2ada_20220618_comp_2](https://raw.githubusercontent.com/CorvaeOboro/gen_item/master/docs/ring/item_ring_stylegan2ada_20220618_comp_2.jpg?raw=true "item_ring_stylegan2ada_20220618_comp_2")
 
@@ -42,15 +42,15 @@ create item images , a circular workflow of refinement using procgen augmented b
 
 # GUIDED MUTATION / REMIXING
 - with initial set of procgen selected , expand the dataset and alter using various techniques :
-- VQGAN+CLIP and STABLEDIFFUSION - text-to-image guided modification of input image 
-- PROMPT generation from wildcards text files 
-- IMAGE_COLLAGE.py - given a folder of images randomly composites them with randomized hue / brightness / normalization 
+- IMAGE_COLLAGE.py - given a folder of images randomly composites them with randomized color / brightness  
+- z_MLOP_COLOR_GRADIENT_VARIANT.hda - given a folder of images , generates randomized color gradient variations 
+- VQGAN+CLIP and STABLEDIFFUSION - text-to-image guided modification of input image , prompts generated from included wildcard txt files 
 ![item_ring_stablediffusion_20220915_comp](https://raw.githubusercontent.com/CorvaeOboro/gen_item/master/docs/ring/item_ring_stablediffusion_20220915_comp.jpg?raw=true "item_ring_stablediffusion_20220915_comp")
 
 # INSTALL
 
 ```.bash
-#anaconda create from included environment.yml
+#create anaconda venv from included environment.yml
 git clone 'https://github.com/CorvaeOboro/gen_item'
 cd gen_item
 conda env create --prefix venv -f environment.yml
