@@ -39,19 +39,22 @@ create item images , a circular workflow of refinement using procgen augmented b
 ![item_ring_procgen](https://raw.githubusercontent.com/CorvaeOboro/gen_item/master/docs/ring/item_ring_procgen.jpg?raw=true "item_ring_procgen")
 ![item_ring_pdgA_comp](https://raw.githubusercontent.com/CorvaeOboro/gen_item/master/docs/ring/item_ring_pdgA_comp.jpg?raw=true "item_ring_pdgA_comp")
 
-# GUIDED MUTATION / REMIXING
-- with initial set of procgen selected , expand the dataset and alter using various techniques :
+# MUTATION / REMIXING
+- with initial set of procgen selected , expand the dataset and alter using multiple techniques :
 - IMAGE_COLLAGE.py - given a folder of images randomly composites them with randomized color / brightness  
 - z_MLOP_COLOR_GRADIENT_VARIANT.hda - given a folder of images , generates randomized color gradient variations 
+- IMAGE_TEXTURIZER.py - overlay texture dataset , using subcomponent datasets for example fluids for potions , and metals for shields . 
 - VQGAN+CLIP and STABLEDIFFUSION - text-to-image guided modification of input image , prompts generated from included wildcard txt files 
 ![item_ring_stablediffusion_20220915_comp](https://raw.githubusercontent.com/CorvaeOboro/gen_item/master/docs/ring/item_ring_stablediffusion_20220915_comp.jpg?raw=true "item_ring_stablediffusion_20220915_comp")
 
 # INSTALL
 
 ```.bash
-#create anaconda venv from included environment.yml
+#open anaconda as admin
+#clone gen_item
 git clone 'https://github.com/CorvaeOboro/gen_item'
 cd gen_item
+#create conda venv from included environment.yml
 conda env create --prefix venv -f environment.yml
 conda activate C:/FOLDER/gen_item/venv
 
